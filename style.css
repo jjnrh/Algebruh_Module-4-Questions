@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://i.imgur.com/FKi23PG.gif');
+  min-height:100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  text-shadow:#000000;
+  text-shadow: 50%;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px); /* Adjust the blur intensity */
+    z-index: -1; /* Ensure the blurred image is behind the content */
+  }
+  
+}
+.quiz-container {
+  background-position: center; 
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  width: 900px;
+  height:65%;
+  position: relative; 
+  z-index: 1; 
+}
+
+
+
+/* Remaining styles */
+
+.user-image {
+  position: absolute;
+  top: 50%;
+  left: 6rem;
+  transform: translateY(-50%);
+  width: 20rem; /* Adjust the size as needed */
+  height: auto;
+}
+
+.slime-image {
+  position: absolute;
+  top: 50%;
+  right: 8rem;
+  transform: translateY(-50%);
+  width: 15rem; /* Adjust the size as needed */
+  height: auto;
+}
+
+.user-image.wrong-answer {
+  filter: brightness(0) saturate(100%) drop-shadow(0px 0px 0px red); /* Change the color to red */
+}
+
+@keyframes moveFireball {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px); /* Move the fireball image 50px to the right */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fireball-image {
+  display: none; /* Initially hide the fireball image */
+  position: absolute;
+  top: 50%;
+  right: 22rem; /* Adjust position as needed */
+  transform: translateY(-50%);
+  width: 10rem; /* Adjust the size as needed */
+  height: auto;
+  animation: moveFireball 2s infinite; /* Apply the animation to move the fireball */
+}
+
+.slime-image.correct-answer + .fireball-image {
+  display: block; /* Display the fireball image when the slime image has the correct-answer class */
+}
+
+.slime-image.correct-answer {
+  filter: brightness(0) saturate(100%) drop-shadow(0px 0px 0px red); /* Change the color to red */
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 4rem;
+}
+
+.title {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.timer {
+  display: flex;
+  font-weight: 500;
+}
+
+.timer_text {
+  padding-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#countdown {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: rgb(255, 0, 234);
+  border-radius: 10px;
+  padding: 0.1rem 0.3rem;
+}
+
+.quiz-header {
+  padding: 0 4rem 2rem;
+}
+
+p {
+  padding: 1rem 0;
+  margin-top: 1rem;
+  border-top: 2px solid rgb(255, 0, 234);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+  padding: 1rem 0;
+  margin-top:1rem;
+  border-top: 2px solid rgb(255, 0, 234);
+  border-bottom: 2px solid rgb(255, 0, 234);
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#submit {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+  width: 40%;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1rem 1.3rem;
+}
+
+#submit:hover {
+  background-color: rgb(255, 0, 234);
+  color:#000000;
+
+}
+
+#submit:focus {
+  outline: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #000000 !important;
+  border: none !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: rgb(255, 0, 140)!important;
+  color: #000000 !important;
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+  background-color: #000000 !important;
+}
+
+.end_quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.reload {
+  background-color: #000000;
+  padding: 1rem;
+  width: 50%;
+  text-decoration: none;
+  color: rgb(255, 0, 234);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  
+}
+
+.reload:hover {
+  background-color: rgb(255, 0, 234);
+  color:#000000;
+
+}
+
+.img {
+  width: 60%;
+  margin: 1rem;
+}
+
+@media all and (max-width: 900px) {
+  body {
+    height: 150vh;
+  }
+
+  .end_quiz {
+    height: 150vh;
+  }
+}
+
+@media all and (max-width: 500px) {
+  body {
+    height: 100vh;
+  }
+
+  .quiz-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.5);
+    width: 350px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .title {
+    flex: 1;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .end-title{
+    text-align: center;
+  }
+  
+    .end_quiz {
+    height: 80vh;
+  }
+  
+}
+
+@media all and (max-width: 330px) {
+  body{
+    height: 120vh;
+  }
+
+  .quiz-container{
+    width: 300px;
+  }
+
+  .quiz-header{
+    padding: 0 3rem 2rem;
+  }
+
+  .header {
+    padding: 2rem 3rem;
+  }
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.choice {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1rem 1.3rem;
+  text-align: left;
+  width: 100%;
+}
+
+.choice:hover {
+  background-color: rgb(255, 0, 234);
+  color: #000000;
+}
+
+.choice:focus {
+  outline: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+}
+
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.choice {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1rem 1.3rem;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.choice:hover {
+  background-color: rgb(255, 0, 234);
+  color: #000000;
+}
+
+.choice:focus {
+  outline: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 234);
+}
+
+.choice.selected {
+  background-color: rgb(255, 0, 234);
+  color: #000000;
+}
+
