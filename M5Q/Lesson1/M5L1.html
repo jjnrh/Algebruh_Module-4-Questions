@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="M5L1.css">
+  <title>MODULE 5 QUIZ</title>
+</head>
+<body>
+
+  <div class="quiz-container" id="quiz">
+    <div class="header">
+      <div class="title">Question <span id="numberOfQuestion"></span>/<span id="numberOfAllQuestion"></span> </div>
+      <div class="timer">
+        <div class="timer_text">Time left</div>
+        <div id="countdown"></div>
+      </div>
+    </div>
+
+ <div class="quiz-header">
+  <p id="question">Question Text</p>
+  <div class="choices">
+    <button class="choice" id="a" onclick="selectAnswer('a')">
+      <span id="a_text">Answer</span>
+    </button>
+    <button class="choice" id="b" onclick="selectAnswer('b')">
+      <span id="b_text">Answer</span>
+    </button>
+    <button class="choice" id="c" onclick="selectAnswer('c')">
+      <span id="c_text">Answer</span>
+    </button>
+    <button class="choice" id="d" onclick="selectAnswer('d')">
+      <span id="d_text">Answer</span>
+    </button>
+  </div>
+</div>
+
+
+      <div class="btn-div">
+        <button id="submit">Submit</button>
+      </div>
+  </div>
+
+  <script src="M5L1.js"></script>
+  
+</body>
+</html>
